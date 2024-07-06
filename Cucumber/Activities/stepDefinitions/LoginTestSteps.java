@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class LoginTestSteps {
     WebDriver driver;
@@ -46,5 +49,13 @@ public class LoginTestSteps {
         driver.findElement(By.xpath("//button[text()='Log in']")).click();
     }
 
-
+    @When("User enters the following username and password")
+    public void userEntersFromDataTable(DataTable credentials) {
+        List<List<String>> creds = credentials.asLists();
+        for (List<String> cred : creds) {
+            driver.findElement(By.id("username")).sendKeys(cred.get(0));
+            driver.findElement(By.id("password")).sendKeys(cred.get(1));
+            driver.findElement(By.xpath("//button[text()='Log in']")).click();
+        }
+    }
 }
