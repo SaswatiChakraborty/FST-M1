@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         plugin = {"pretty","html:test-reports/index.html","json: test-reports/json-report.json"},
         tags = "@activity6"
 )
-public class activitiesrunner6 {
+public class Activitiesrunner6 {
 }
