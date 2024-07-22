@@ -33,8 +33,8 @@ public class Activity1 {
     }
 
     @Test
-    public void multipleTest(){
-        driver.findElement(AppiumBy.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_07")).click();
+    public void multiplyTest(){
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc=\"7\"]")).click();
         driver.findElement(AppiumBy.accessibilityId("Multiplication")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc=\"5\"]")).click();
         driver.findElement(AppiumBy.accessibilityId("Equal")).click();

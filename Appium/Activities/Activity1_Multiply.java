@@ -38,7 +38,7 @@ public class Activity1_Multiply {
         driver.findElement(AppiumBy.accessibilityId("Multiplication")).click();
         driver.findElement(AppiumBy.id("com.sec.android.app.popupcalculator:id/calc_keypad_btn_06")).click();
         driver.findElement(AppiumBy.accessibilityId("Equal")).click();
-        String result = driver.findElement(AppiumBy.id("com.sec.android.app.popupcalculator:id/calc_tv_result")).getText();
+        String result = driver.findElement(AppiumBy.id("calc_tv_result")).getText();
         Assert.assertEquals(result,"42");
     }
 
